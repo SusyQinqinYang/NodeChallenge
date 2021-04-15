@@ -1,5 +1,4 @@
 const app = require('express')();
-const path = require('path');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 const Promise = require("bluebird");
@@ -79,7 +78,7 @@ app.get('/planets/', async (req, res) => {
                 })
             )
         }
-        
+
         modifyPlanets(allPlanets)
         .then((modifiedPlanets) => {
             res.status(200).json(modifiedPlanets);
