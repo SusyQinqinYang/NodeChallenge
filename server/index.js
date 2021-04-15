@@ -22,16 +22,15 @@ const retrievePeopleOnePage = async() => {
     }
 };
 
-const sortAllPeople = (allPeople) => {
-
-}
-
-app.get('/people', async (req, res) => {
+app.get('/people/', async (req, res) => {
+    let sortBy = req.query.sortBy;
     await retrievePeopleOnePage();
     while (typeof nextPeoplePageUrl  === 'string') {
         await retrievePeopleOnePage();
     }
-
+    if (sortBy !== undefined && allPeople.length > 0) {
+        allPeople.sort((a,b) => a[sortBy] - b[sortBy]);
+    }
     if (allPeople.length > 0) {
         res.status(200).json(allPeople);
     } else {
