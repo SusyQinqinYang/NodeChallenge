@@ -3,8 +3,8 @@
 ## Description
 
 This API is and modified version of [Star Wars API](https://swapi.dev/). It contains below two endpoints:
-- /people : You can retrieve all 87 Star War characters at once.
-  note: /people endpoint can also take an optional query param "sortBy" that allows the result array to be sorted by 'name', 'height', or 'mass'.
+- /people : You can retrieve all 87 Star War characters at once. <br />
+  Note: the people endpoint can also take an optional query param "sortBy" that allows the result array to be sorted by 'name', 'height', or 'mass'.
 - /planets : The planets endpoint would return all planets but the residents field on each planet to be replaced with the residents full names instead of the default from SWAPI which is links to each resident in the original Star War API.
 
 ## Getting Started
@@ -24,7 +24,6 @@ node.js
 git clone repo
 npm install
 npm start
-localhost:3000
 ```
 
 ### Testing via postman
